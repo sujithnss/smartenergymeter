@@ -51,4 +51,3 @@ C:\For Punnya\smartenergymeter\Portal\SmartEnergyMeter\SmartEnergyMeter\bin\Micr
 C:\For Punnya\smartenergymeter\Portal\SmartEnergyMeter\SmartEnergyMeter\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\For Punnya\smartenergymeter\Portal\SmartEnergyMeter\SmartEnergyMeter\obj\Debug\SmartEnergyMeter.dll
 C:\For Punnya\smartenergymeter\Portal\SmartEnergyMeter\SmartEnergyMeter\obj\Debug\SmartEnergyMeter.pdb
-C:\For Punnya\smartenergymeter\Portal\SmartEnergyMeter\SmartEnergyMeter\obj\Debug\SmartEnergyMeter.csprojResolveAssemblyReference.cache
