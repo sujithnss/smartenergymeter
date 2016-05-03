@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    if (User.Identity.Name != "admin ")
+    {
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("View Bill", "ViewBill", "CustomerAccount")</li>
+            <li>@Html.ActionLink("Consumption History", "ConsumptionLog", "CustomerAccount")</li>
+        </ul>
+    }
+}
