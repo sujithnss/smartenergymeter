@@ -57,4 +57,19 @@ namespace SmartEnergyMeter.Models
         public string Password { get; set; }
 
     }
+
+    public class ConsumptionLogViewModel
+    {
+        public int Id { get; set; }
+        public string CustomerId { get; set; }
+        public string SmartEnergyMeterId { get; set; }
+
+        [Required]
+        [Display(Name = "Unit")]
+        public decimal Unit { get; set; }
+
+        [Required]
+        [Display(Name = "Logged Date Time")]
+        public DateTime CreatedDateTime { get; set; }
+    }
 }

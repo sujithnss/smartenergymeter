@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using SmartEnergyMeter.Models;
-using SmartEnergyMeter.API;
+﻿using SmartEnergyMeter.API;
 using SmartEnergyMeter.Entities;
+using SmartEnergyMeter.Models;
 using SmartEnergyMeter.Security;
-using SmartEnergyMeterr.Utility;
+using SmartEnergyMeter.Utility;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 using System.Web.Security;
 
 namespace SmartEnergyMeter.Controllers
@@ -46,7 +44,7 @@ namespace SmartEnergyMeter.Controllers
                         serializeModel.FirstName = authcustomer.Name;
                         serializeModel.Email = authcustomer.Email;
 
-                        Response.Cookies.Add(Utility.EncryptAndSet(serializeModel));
+                        Response.Cookies.Add(Utility.Utility.EncryptAndSet(serializeModel));
                         return RedirectToAction("Index", "Home");
 
                     }
@@ -96,14 +94,14 @@ namespace SmartEnergyMeter.Controllers
                     serializeModel.Email = customer.Email;
                     serializeModel.UserTyepId = Convert.ToInt16(UserTypes.Customer);
 
-                    Response.Cookies.Add(Utility.EncryptAndSet(serializeModel));
+                    Response.Cookies.Add(Utility.Utility.EncryptAndSet(serializeModel));
                     if (!string.IsNullOrEmpty(returnUrl))
                     {
                         return Redirect("../" + returnUrl);
                     }
                     else
                     {
-                        return RedirectToAction("ViewBill", "CustomerAccount");
+                        return RedirectToAction("ConsumptionLog", "CustomerAccount");
                     }
 
 
@@ -117,7 +115,7 @@ namespace SmartEnergyMeter.Controllers
                     serializeModel.Email = adminUser.Email;
                     serializeModel.UserTyepId = Convert.ToInt16(UserTypes.Admin);
 
-                    Response.Cookies.Add(Utility.EncryptAndSet(serializeModel));
+                    Response.Cookies.Add(Utility.Utility.EncryptAndSet(serializeModel));
                     if (!string.IsNullOrEmpty(returnUrl))
                     {
                         return Redirect("../" + returnUrl);
@@ -157,12 +155,27 @@ namespace SmartEnergyMeter.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult ConsumptionLog(string returnUrl)
+        public async Task<ActionResult> ConsumptionLog(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            ViewBag.Message = "Consumption Log History";
+            List<ConsumptionLogViewModel> customerList = new List<ConsumptionLogViewModel>();
 
-            return View();
+            List<ConsumptionLog> consumptionLogs = await client.ConsumptionLogGetById(Utility.Utility.DecryptAndGetCustomPrincipal(Request.Cookies[FormsAuthentication.FormsCookieName]).CustomerID);
+            foreach (ConsumptionLog cons in consumptionLogs)
+            {
+                ConsumptionLogViewModel temp = new ConsumptionLogViewModel();
+                temp.Id = cons.Id;
+                temp.CustomerId = cons.CustomerId;
+                temp.SmartEnergyMeterId = cons.SmartEnergyMeterId;
+                temp.Unit = cons.Unit;
+                temp.CreatedDateTime = cons.CreatedDateTime;
+
+                customerList.Add(temp);
+            }
+            return View(customerList);
         }
+
+
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using SmartEnergyMeter.DataAccess;
 using SmartEnergyMeter.Entities;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace SmartEnergyMeter.Controllers
@@ -34,5 +35,28 @@ namespace SmartEnergyMeter.Controllers
         {
             return repository.AuthenticateAdminUser(customer.Email, customer.Password);
         }
+
+        [HttpGet]
+        [Route("api/customer/listall")]
+        public List<Customer> CustomerGetAll()
+        {
+            return repository.ListCustomer();
+        }
+
+        [HttpGet]
+        [Route("api/customer/log/{customerId}")]
+        public List<ConsumptionLog> ConsumptionLogGetById(string customerId)
+        {
+            return repository.ListConsumptionLog(customerId);
+        }
+
+        [HttpGet]
+        [Route("api/customer/log/{smartEnergyMeterId}/{unit}")]
+        public bool ConsumptionLogInsert(string smartEnergyMeterId, decimal unit)
+        {
+            return repository.ConsumptionLogInsert(smartEnergyMeterId,unit);
+        }
+
+
     }
 }

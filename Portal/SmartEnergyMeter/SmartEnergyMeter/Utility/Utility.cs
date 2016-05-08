@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 
-namespace SmartEnergyMeterr.Utility
+namespace SmartEnergyMeter.Utility
 {
     public static class Utility
     {

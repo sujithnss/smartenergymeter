@@ -18,6 +18,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>05/01/2016 07:36:48</publishTime>
     </File>
+    <File Include="bin/GridMvc.dll">
+      <publishTime>05/06/2016 20:47:08</publishTime>
+    </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>05/01/2016 07:36:46</publishTime>
     </File>
@@ -76,7 +79,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/01/2016 07:36:47</publishTime>
     </File>
     <File Include="bin/SmartEnergyMeter.dll">
-      <publishTime>05/03/2016 07:53:38</publishTime>
+      <publishTime>05/08/2016 18:16:59</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>05/01/2016 07:36:48</publishTime>
@@ -117,6 +120,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css">
       <publishTime>05/01/2016 06:47:52</publishTime>
     </File>
+    <File Include="Content/Gridmvc.css">
+      <publishTime>05/06/2016 20:47:09</publishTime>
+    </File>
     <File Include="Content/Site.css">
       <publishTime>05/01/2016 06:47:51</publishTime>
     </File>
@@ -138,14 +144,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Global.asax">
       <publishTime>05/01/2016 06:47:51</publishTime>
     </File>
+    <File Include="Grid.mvc.readme">
+      <publishTime>05/06/2016 20:47:09</publishTime>
+    </File>
     <File Include="packages.config">
-      <publishTime>05/01/2016 16:42:31</publishTime>
+      <publishTime>05/06/2016 20:47:09</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>05/01/2016 06:47:52</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
       <publishTime>05/01/2016 06:47:52</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.js">
+      <publishTime>05/06/2016 20:47:09</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.lang.ru.js">
+      <publishTime>05/06/2016 20:47:09</publishTime>
+    </File>
+    <File Include="Scripts/gridmvc.min.js">
+      <publishTime>05/06/2016 20:47:09</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>05/01/2016 06:47:53</publishTime>
@@ -178,7 +196,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/01/2016 06:47:55</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>05/01/2016 06:47:55</publishTime>
+      <publishTime>05/06/2016 20:47:09</publishTime>
+    </File>
+    <File Include="Views/AdminAccount/ConfigureTariff.cshtml">
+      <publishTime>05/08/2016 16:39:18</publishTime>
     </File>
     <File Include="Views/AdminAccount/ConfigureTariif.cshtml">
       <publishTime>05/03/2016 07:39:25</publishTime>
@@ -187,10 +208,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2016 07:39:34</publishTime>
     </File>
     <File Include="Views/AdminAccount/ManageCustomer.cshtml">
-      <publishTime>05/03/2016 07:39:05</publishTime>
+      <publishTime>05/06/2016 20:49:50</publishTime>
+    </File>
+    <File Include="Views/AdminAccount/ManageSmartEnergyMeter.cshtml">
+      <publishTime>05/08/2016 17:12:03</publishTime>
+    </File>
+    <File Include="Views/AdminAccount/RegisterSmartEnergyMeter.cshtml">
+      <publishTime>05/08/2016 18:04:05</publishTime>
     </File>
     <File Include="Views/CustomerAccount/ConsumptionLog.cshtml">
-      <publishTime>05/03/2016 07:44:35</publishTime>
+      <publishTime>05/08/2016 07:57:18</publishTime>
     </File>
     <File Include="Views/CustomerAccount/Login.cshtml">
       <publishTime>05/03/2016 07:33:19</publishTime>
@@ -211,10 +238,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/01/2016 06:47:57</publishTime>
     </File>
     <File Include="Views/Shared/_AdminViewPartial.cshtml">
-      <publishTime>05/03/2016 07:38:32</publishTime>
+      <publishTime>05/06/2016 19:56:27</publishTime>
     </File>
     <File Include="Views/Shared/_CustomerViewPartial.cshtml">
-      <publishTime>05/03/2016 07:44:08</publishTime>
+      <publishTime>05/06/2016 20:55:42</publishTime>
+    </File>
+    <File Include="Views/Shared/_Grid.cshtml">
+      <publishTime>05/06/2016 20:47:09</publishTime>
+    </File>
+    <File Include="Views/Shared/_GridPager.cshtml">
+      <publishTime>05/06/2016 20:47:09</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>05/03/2016 07:30:25</publishTime>
@@ -229,7 +262,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/01/2016 06:47:51</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/03/2016 07:53:38</publishTime>
+      <publishTime>05/08/2016 18:17:57</publishTime>
     </File>
   </ItemGroup>
 </Project>

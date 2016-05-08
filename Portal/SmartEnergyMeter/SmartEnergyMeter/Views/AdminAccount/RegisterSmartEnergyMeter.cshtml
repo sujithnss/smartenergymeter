@@ -1,0 +1,47 @@
+﻿@model SmartEnergyMeter.Models.SmartEnergyMeterViewModels
+@{
+    ViewBag.Title = "Register Smart Energy Meter";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("RegisterSmartEnergyMeter", "AdminAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">   
+            @Html.TextBoxFor(m => m.Id, @ViewBag.SmartBinId as string, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CustomerId, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+
+            @Html.DropDownListFor(model => model.CustomerId, @ViewBag.CustomerId as SelectList, "Select Customer", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CustomerId)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TariffType, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+           @Html.RadioButton("userTypeGrp", "1", isChecked: true)  @Html.Label("TOD")
+            @Html.RadioButton("userTypeGrp", "2", isChecked: false)  @Html.Label("Normal")
+
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

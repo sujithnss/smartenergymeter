@@ -10,4 +10,10 @@ namespace SmartEnergyMeter.Entities
         Customer = 1 ,
         Admin = 2
     }
+
+    public enum TariffType
+    {
+        TOD =1,
+        Normal = 2
+    }
 }
